@@ -278,7 +278,7 @@ const handleAdd = () => {
           onChange={handleSearch}
           style={{ width: '300px', marginBottom: '20px' }}
         />
-        <Button type="primary" icon={<PlusOutlined />} onClick={handleAdd}>
+        <Button type="primary" icon={<PlusOutlined />} onClick={handleAdd} style={{marginTop : '20px'}}>
           Thêm Bài Viết
         </Button>
         <Table

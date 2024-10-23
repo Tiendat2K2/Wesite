@@ -16,6 +16,14 @@ const Teacher = () => {
   const isBaiVietPage = location.pathname === '/teacher/baiviet';
 
   useEffect(() => {
+/*************  ✨ Codeium Command ⭐  *************/
+/**
+ * Asynchronously checks the validity of the current session token by making a request
+ * to the server. If the server responds with a 401 status, indicating an expired token,
+ * it displays an error message, updates the authentication state, and navigates to the
+ * login page.
+ */
+/******  60dcc26f-1035-4d05-91d0-24005efc49fa  *******/
     const checkTokenValidity = async () => {
       try {
         await axiosInstance.get('/');
