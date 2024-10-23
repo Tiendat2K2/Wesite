@@ -3,7 +3,7 @@ import { Table, Input, Button, Modal, Form, message, Upload, Select } from 'antd
 import { UploadOutlined, EditOutlined, DeleteOutlined, EyeOutlined, DownloadOutlined, FileOutlined, FilePdfOutlined, FileWordOutlined, SearchOutlined } from '@ant-design/icons';
 import axiosInstance from '../../../server/authService';
 import API_URL from '../../../server/server';
-
+import '../../../assets/css/Login.css';
 const { Option } = Select;
 
 const TeacherBaiViet = () => {
@@ -255,13 +255,20 @@ const TeacherBaiViet = () => {
           style={{ width: '300px', marginBottom: '20px' }}
         />
         <Table
-          columns={columns}
-          dataSource={filteredData}
-          rowKey="ID"
-          pagination={false}
-          bordered
-          style={{ backgroundColor: '#F0F0F0', marginTop: '20px' }}
-        />
+  columns={columns}
+  dataSource={filteredData}
+  rowKey="ID"
+  pagination={{
+    pageSize: 5,
+    
+  }}
+  bordered
+  style={{ 
+    backgroundColor: '#F0F0F0', 
+    marginTop: '20px',
+  }}
+  className="custom-table"
+/>
         <Modal
           title={editingRecord ? 'Chỉnh sửa Bài Viết' : 'Thêm Bài Viết'}
           visible={isModalVisible}

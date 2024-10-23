@@ -18,7 +18,9 @@ const CustomSider = () => {
     if (e.key === '1') {
       navigate('/teacher'); // Navigate to Dashboard
     } else if (e.key === '2') {
-      navigate('/teacher/baiviet'); // Navigate to BaiViet page
+      navigate('/teacher/baiviet'); // Navigate to Bài viết giáo viên page
+    } else if (e.key === '3') {
+      navigate('/teacher/danhsachbaiviet'); // Navigate to Danh sách bài viết page
     }
   };
 
@@ -32,12 +34,17 @@ const CustomSider = () => {
           {
             key: '1',
             label: 'Dashboard',
-            style: selectedKey === '2' ? { backgroundColor: '#F0DCC2' } : {}, // Change color of Bài viết giáo viên if Dashboard is clicked
+            style: selectedKey === '1' ? { backgroundColor: '#fff' } : { backgroundColor: '#F0DCC2' }, // White when selected, #F0DCC2 otherwise
           },
           {
             key: '2',
             label: 'Bài viết giáo viên',
-            style: selectedKey === '1' ? { backgroundColor: '#F0DCC2' } : {}, // Highlight this item when selected
+            style: selectedKey === '2' ? { backgroundColor: '#fff' } : { backgroundColor: '#F0DCC2' }, // White when selected, #F0DCC2 otherwise
+          },
+          {
+            key: '3',
+            label: 'Danh sách bài viết của giáo viên',
+            style: selectedKey === '3' ? { backgroundColor: '#fff' } : { backgroundColor: '#F0DCC2' }, // White when selected, #F0DCC2 otherwise
           },
         ]}
       />

@@ -3,7 +3,7 @@ import { Table, Input, message, Image } from 'antd';
 import { SearchOutlined } from '@ant-design/icons';
 import axiosInstance from '../../../server/authService';
 import API_URL from '../../../server/server';
-
+import '../../../assets/css/Login.css';
 const AdminThongTinGiaoVien = () => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -123,14 +123,21 @@ const AdminThongTinGiaoVien = () => {
         style={{ width: '300px', marginBottom: '20px' }}
       />
       <Table
-        columns={columns}
-        dataSource={filteredData}
-        loading={loading}
-        rowKey="MGV"
-        pagination={{ pageSize: 10 }}
-        bordered
-        style={{ backgroundColor: '#F0F0F0' }}
-      />
+  columns={columns}
+  dataSource={filteredData}
+ rowKey="MGV"
+  pagination={{
+    pageSize: 5,
+    
+  }}
+  bordered
+  style={{ 
+    backgroundColor: '#F0F0F0', 
+    marginTop: '20px',
+  }}
+  className="custom-table"
+/>
+      
     </div>
   );
 };

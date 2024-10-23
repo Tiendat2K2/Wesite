@@ -37,6 +37,7 @@ function App() {
         {/* Protected routes for Teacher */}
         <Route path="/teacher" element={<ProtectedRoute element={Teacher} allowedRoles={['2']} />} />
         <Route path="/teacher/baiviet" element={<ProtectedRoute element={Teacher} allowedRoles={['2']} />} />
+        <Route path="/teacher/danhsachbaiviet" element={<ProtectedRoute element={Teacher} allowedRoles={['2']} />} />
       </Routes>
     </Router>
   );

@@ -3,7 +3,7 @@ import { Table, Input, message, Modal, Form, Button } from 'antd';
 import { SearchOutlined, EditOutlined, DeleteOutlined, PlusOutlined } from '@ant-design/icons';
 import axiosInstance from '../../../server/authService';
 import API_URL from '../../../server/server';
-
+import '../../../assets/css/Login.css';
 const AdminTenChuyenNganh = () => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -183,13 +183,20 @@ const AdminTenChuyenNganh = () => {
         </Button>
       </div>
       <Table
-        columns={columns}
-        dataSource={filteredData}
-        pagination={false}
-        bordered
-        loading={loading}
-        style={{ backgroundColor: '#F0F0F0' }}
-      />
+  columns={columns}
+  dataSource={filteredData}
+  rowKey="ID"
+  pagination={{
+    pageSize: 5,
+    
+  }}
+  bordered
+  style={{ 
+    backgroundColor: '#F0F0F0', 
+    marginTop: '20px',
+  }}
+  className="custom-table"
+/>
 
       <Modal
         title={editingItem ? "Cập nhật Chuyên Ngành" : "Thêm Chuyên Ngành"}
