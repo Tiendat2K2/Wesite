@@ -2,7 +2,6 @@
   "name": "frontend",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://Tiendat2K2.github.io/Website",
   "dependencies": {
     "@ant-design/icons": "^5.5.1",
     "@cloudinary/react": "^1.13.0",
