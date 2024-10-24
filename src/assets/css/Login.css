@@ -44,21 +44,21 @@
   /* Title Styling */
   .ant-typography {
     font-weight: bold;
-    color: #333333;
+    color: #c18c8c;
   }
   .custom-table .ant-table-thead > tr > th {
-    background-color: #000000;
+    background-color: #14bdf4;
     color: white;
   }
   
   .custom-table .ant-table-tbody > tr > td {
-    border: 1px solid #000000;
+    border: 1px solid #c18c8c;
   }
   
   .custom-table .ant-table-tbody > tr:nth-child(even) {
-    background-color: #f0f0f0;
+    background-color: #c18c8c;
   }
   
   .custom-table .ant-table-tbody > tr:nth-child(odd) {
-    background-color: #ffffff;
+    background-color: #c18c8c;
   }
