@@ -227,20 +227,6 @@ const TeacherBaiViet = () => {
       dataIndex: 'Ghichu',
       key: 'ghiChu',
     },
-    {
-      title: 'Thao tác',
-      key: 'action',
-      render: (_, record) => (
-        <span>
-          <Button onClick={() => handleEdit(record)} icon={<EditOutlined />}>
-            Sửa
-          </Button>
-          <Button onClick={() => showDeleteConfirm(record.ID)} icon={<DeleteOutlined />} style={{ marginLeft: '8px' }}>
-            Xóa
-          </Button>
-        </span>
-      ),
-    },
   ];
 
   return (
