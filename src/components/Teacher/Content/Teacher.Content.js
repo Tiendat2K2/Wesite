@@ -2,8 +2,9 @@ import React, { useEffect, useState } from 'react';
 import { Layout, Spin, message } from 'antd';
 import axios from 'axios';
 import API_URL from '../../../server/server';
-import Logo from '../../../assets/img/logo.png';
-
+import Logo from '../../../assets/img/nam.jpg';
+import logo from '../../../assets/img/1728788837888-logo.jpg';
+import logo2 from '../../../assets/img/logo.png';
 const { Content } = Layout;
 
 const contentStyle = {
@@ -57,7 +58,6 @@ const CustomContent = () => {
   const [userData, setUserData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  const [imageUrl, setImageUrl] = useState(null);
 
   useEffect(() => {
     fetchAllUsers();
@@ -77,8 +77,6 @@ const CustomContent = () => {
       if (response.data.status === 1 && response.data.data.length > 0) {
         const user = response.data.data[0];
         setUserData(user);
-        // Set image URL from the backend
-        setImageUrl(user.Img ? `http://localhost:3000/uploads/${user.Img.split('/').pop()}` : null); // Adjust the URL accordingly
       } else {
         throw new Error('Không có dữ liệu người dùng');
       }
@@ -90,7 +88,15 @@ const CustomContent = () => {
       setLoading(false);
     }
   };
-
+  const getAvatar = () => {
+    if (userData?.Gioitinh === null) {
+      return logo2; // Nếu giới tính là null
+    } else if (userData?.Gioitinh.toLowerCase() === 'nữ') {
+      return logo; // Nếu giới tính là nữ
+    } else {
+      return Logo; // Nếu giới tính là nam
+    }
+  };
   if (loading) {
     return <Spin tip="Loading..." />;
   }
@@ -102,7 +108,16 @@ const CustomContent = () => {
   return (
     <Content style={contentStyle}>
       <div style={infoContainerStyle}>
-        <img src={imageUrl || Logo} alt="Avatar" style={imageStyle} />
+      <img
+          src={getAvatar()}
+          alt={`Avatar of ${userData?.Hoten}`}
+          style={imageStyle}
+          onError={(e) => {
+            e.target.onerror = null;
+            e.target.src = logo2; // Đường dẫn ảnh mặc định nếu lỗi tải ảnh
+          }}
+        />
+
       </div>
       <div style={textBlockWrapperStyle}>
         <div style={textBlockStyle}>
